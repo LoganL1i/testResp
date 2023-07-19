@@ -255,15 +255,15 @@ static bool HwTestAp_At_Synchronization(void)
         return false;
     }
 
-    //    // 清除存储的频点，测试316模组在地下室效果不好，添加清除存储频点的步骤
-    //    status = Ap_Send_At_Cmd_Keywords("AT+CFUN=0\r", "OK", 10000, 1);
-    //    if (status == false) {
-    //        return false;
-    //    }
-    //    status = Ap_Send_At_Cmd_Keywords("AT+NCSEARFCN\r", "OK", 5000, 2);
-    //    if (status == false) {
-    //        return false;
-    //    }
+       // 清除存储的频点，测试316模组在地下室效果不好，添加清除存储频点的步骤
+       status = Ap_Send_At_Cmd_Keywords("AT+CFUN=0\r", "OK", 10000, 1);
+       if (status == false) {
+           return false;
+       }
+       status = Ap_Send_At_Cmd_Keywords("AT+NCSEARFCN\r", "OK", 5000, 2);
+       if (status == false) {
+           return false;
+       }
 
     // 启动模块
     status = Ap_Send_At_Cmd_Keywords("AT+CFUN=1\r", "OK", 400, 5);
